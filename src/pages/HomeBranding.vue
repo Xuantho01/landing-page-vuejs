@@ -1,34 +1,34 @@
 <template>
   <div class="main-container">
     <!-- Navbar section -->
-    <Navbar/>
+    <Navbar />
 
     <!-- hero section -->
-    <HeroBranding/>
+    <HeroBranding />
 
     <!-- about section -->
-    <AboutSection/>
+    <AboutSection />
 
     <!-- business analytics start -->
     <!-- Khác tên comp con business vs  FeatureList -->
-    <BusinessSection/>
+    <BusinessSection />
 
     <!-- requirement section-->
     <!-- khác tên model vs comp -->
     <!-- thiếu property srcImage trong model -->
-    <RequireList/>
+    <RequireList />
 
     <!-- feature carousel -->
     <!-- khác tên model vs comp -->
     <!-- thiếu property imgSrc trong model featureCarousel -->
-    <FeatureTwo/>
+    <FeatureTwo />
 
     <!-- feature list progress bar -->
     <div class="feature-list-progress-area pb-30">
       <div class="container">
         <!-- progress feature component -->
         <!-- thiếu title, fill, class, class 2 trong model -->
-        <ProgressCircle/>
+        <ProgressCircle />
       </div>
     </div>
     <!-- feature list progress bar -->
@@ -41,23 +41,24 @@
                     stroke-miterlimit:10;"
           d="M3360.5,97.739c-242,0-480-48.375-480-48.375
                         S2647.5,0.5,2400.5,0.5s-480,48.375-480,48.375s-238,48.864-480,48.864s-480-48.375-480-48.375S727.5,0.5,480.5,0.5
-                        S0.5,48.875,0.5,48.875V108h1920h1920V48.875C3840.5,48.875,3602.5,97.739,3360.5,97.739z"/>
+                        S0.5,48.875,0.5,48.875V108h1920h1920V48.875C3840.5,48.875,3602.5,97.739,3360.5,97.739z"
+        />
       </template>
     </CurveShape>
-    <PricingSection/>
+    <PricingSection />
     <!-- pricing section end-->
 
     <!-- partner client section -->
-    <PartnerClientSection/>
+    <PartnerClientSection />
 
     <!-- newsletter section -->
-    <Newsletter/>
+    <Newsletter />
 
     <!-- footer section -->
-    <FooterMain/>
+    <FooterMain />
 
     <!-- offcanvas search component -->
-    <OffcanvasSearchBox/>
+    <OffcanvasSearchBox />
   </div>
 </template>
 
@@ -105,3 +106,8 @@ export default {
   }
 }
 </script>
+<style>
+.main-container {
+    margin-left: 0 !important;
+}
+</style>

@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-export function getNavbar() {
+export function getHeroBranding() {
   return request({
-    url: 'navbar-section/get-latest',
+    url: 'hero-branding-section/get-latest',
     method: 'get'
   })
 }
