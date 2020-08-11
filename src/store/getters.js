@@ -14,6 +14,7 @@ const getters = {
   // Getter component lading page
   logoNavbar: state => state.navbar.logoSrc,
   heroBranding: state => state.heroBranding.heroBranding,
-  aboutSection: state => state.aboutSection.aboutSection
+  aboutSection: state => state.aboutSection.aboutSection,
+  businessSection: state => state.businessSection.businessSection
 }
 export default getters

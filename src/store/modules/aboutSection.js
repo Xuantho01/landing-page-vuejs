@@ -23,7 +23,7 @@ const actions = {
   aboutSection({ commit }) {
     return getAboutSection().then(response => {
       commit('UPDATE_ABOUT_SECTION', response.data.data)
-      console.log('aboutSection in action', response.data.data)
+      // console.log('aboutSection in action', response.data.data)
     })
   }
 }
