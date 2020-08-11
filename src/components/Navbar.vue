@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    // this.$store.dispatch('navbar/getLogo');
+    this.$store.dispatch('navbar/getLogoNavbar');
 
     (function() {
       scrollTo()

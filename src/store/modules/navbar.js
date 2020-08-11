@@ -1,17 +1,21 @@
+import { getNavbar } from '@/api/navbar'
+
 const state = {
   logoSrc: ''
 }
 
 const mutations = {
+  UPDATE_LOGO: (state, logoSrc) => {
+    state.logoSrc = logoSrc
+  }
 }
 
 const actions = {
-  // update({ commit }, log) {
-  //   commit('ADD_ERROR_LOG', log)
-  // },
-  // clearErrorLog({ commit }) {
-  //   commit('CLEAR_ERROR_LOG')
-  // }
+  getLogoNavbar({ commit }) {
+    getNavbar().then(response => {
+      commit('UPDATE_LOGO', response.data.data.logo_src)
+    })
+  }
 }
 
 export default {
@@ -20,3 +24,4 @@ export default {
   mutations,
   actions
 }
+
