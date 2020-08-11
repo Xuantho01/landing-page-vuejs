@@ -1,13 +1,13 @@
 <template>
-  <div class="search-overlay" id="search-overlay">
+  <div id="search-overlay" class="search-overlay">
     <div class="search-overlay__inner">
       <div class="search-overlay__header">
         <div class="container-fluid">
           <div class="row align-items-center">
             <div class="col-md-6 col-8">
               <div class="logo">
-                <a v-bind:href="logoHref">
-                  <img src="../assets/img/logo/logo-dark.png" class="img-fluid" alt="site logo"/>
+                <a :href="logoHref">
+                  <img :src="searchBox.logo_src" class="img-fluid" alt="site logo">
                   <!-- <img v-bind:src="logoScr" class="img-fluid" alt="site logo"> -->
                 </a>
               </div>
@@ -17,7 +17,7 @@
                 <span
                   class="mobile-navigation-close-icon"
                   @click="toggleClass('removeClass', 'active')"
-                ></span>
+                />
               </div>
             </div>
           </div>
@@ -26,9 +26,9 @@
       <div class="search-overlay__body">
         <div class="search-overlay__form">
           <form action="#">
-            <input type="text" placeholder="Enter search keyword..."/>
+            <input type="text" :placeholder="searchBox.search_placeholder">
             <button type="submit">
-              <i class="far fa-search"></i>
+              <i class="far fa-search" />
             </button>
           </form>
         </div>
@@ -38,12 +38,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       logoScr: '',
       logoHref: 'index.html'
     }
+  },
+  computed: {
+    ...mapGetters(['searchBox'])
+  },
+  mounted() {
+    this.$store.dispatch('searchBox/getSearchBox')
   },
   methods: {
     // offcanvas searchbox
