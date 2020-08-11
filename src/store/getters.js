@@ -18,6 +18,5 @@ const getters = {
   businessSection: state => state.businessSection.businessSection,
   requirementSection: state => state.requirementSection.requirementSection,
   featureCarouselSection: state => state.featureCarouselSection.featureCarouselSection
-
 }
 export default getters

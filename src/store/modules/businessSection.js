@@ -7,11 +7,6 @@ const state = {
     video_title: '',
     image_url: '',
     businessFeatureList: [
-      {
-        icon: '',
-        title: '',
-        description: ''
-      }
     ]
   }
 }
