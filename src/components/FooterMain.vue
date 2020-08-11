@@ -6,8 +6,8 @@
           <div class="col-lg-4 col-md-6 footer-widget">
             <div class="footer-widget__logo mb-30">
               <router-link to="/">
-                <img src="../assets/img/logo/logo-dark.png" class="img-fluid logo-dark" alt>
-                <img src="../assets/img/logo/logo-light.png" class="img-fluid logo-light" alt>
+                <img :src="footer.logo_src" class="img-fluid logo-dark" alt>
+                <!-- <img src="../assets/img/logo/logo-light.png" class="img-fluid logo-light" alt> -->
               </router-link>
             </div>
 
@@ -31,15 +31,11 @@
             </ul>-->
           </div>
 
-          <div
-            v-for="(foot,index) in footerList"
-            :key="index"
-            class="col-lg-4 col-md-6 footer-widget"
-          >
-            <h6 class="footer-widget__title mb-20">{{ foot.title }}</h6>
+          <div class="col-lg-2 col-md-6 footer-widget">
+            <h6 class="footer-widget__title mb-20">{{ footer.title }}</h6>
             <ul class="footer-widget__list">
-              <li v-for="(link,index) in foot.footerLinkList" :key="index">
-                <a :href="link.href" class="hover-style-link">{{ link.title }}</a>
+              <li v-for="(footerLink,index) in footer.footerLinkList" :key="index">
+                <a :href="footerLink.href" class="hover-style-link">{{ footerLink.title }}</a>
               </li>
             </ul>
           </div>
@@ -132,36 +128,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'FooterMain',
   props: ['FooterStyle'],
   data() {
     return {
-      logoSrc: '#',
-      footerList: [
-        {
-          title: 'Who we are',
-          footerLinkList: [
-            {
-              title: 'About us',
-              href: '#'
-            },
-            {
-              title: 'About us',
-              href: '#'
-            },
-            {
-              title: 'About us',
-              href: '#'
-            },
-            {
-              title: 'About us',
-              href: '#'
-            }
-          ]
-        }
-      ],
-
       tweet: {
         text: ' "The ocean never ceases to amaze!" Feature: Ben Klea',
         href: 'https://t.co/jSRMsZAdPW',
@@ -174,6 +146,12 @@ export default {
         href: ['#', '#', '#']
       }
     }
+  },
+  computed: {
+    ...mapGetters(['footer'])
+  },
+  mounted() {
+    this.$store.dispatch('footer/getFooter')
   }
 }
 </script>

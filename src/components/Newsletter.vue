@@ -42,7 +42,7 @@ export default {
     ...mapGetters(['newsletter'])
   },
   mounted() {
-    this.$store.dispatch('getNewsletter')
+    this.$store.dispatch('newsletter/getNewsletter')
   }
 }
 </script>

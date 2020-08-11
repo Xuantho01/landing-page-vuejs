@@ -15,6 +15,7 @@ const getters = {
   logoNavbar: state => state.navbar.logoSrc,
   heroBranding: state => state.heroBranding.heroBranding,
   searchBox: state => state.searchBox.searchBox,
-  newsletter: state => state.newsletter.newsletter
+  newsletter: state => state.newsletter.newsletter,
+  footer: state => state.footer.footer
 }
 export default getters
