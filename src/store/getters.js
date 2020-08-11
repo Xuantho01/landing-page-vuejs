@@ -12,7 +12,8 @@ const getters = {
   permission_routes: state => state.permission.routes,
   errorLogs: state => state.errorLog.logs,
   logoNavbar: state => state.navbar.logoSrc,
-  heroBranding: state => state.heroBranding.heroBranding
-
+  heroBranding: state => state.heroBranding.heroBranding,
+  progressCircle: state => state.progressCircle.featureProgressList,
+  pricingSection: state => state.princingSection.pricingSectionObj
 }
 export default getters

@@ -25,10 +25,17 @@
 
 <script>
 import Pricing from './Pricing'
-
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Pricing
+  },
+  computed: {
+    ...mapGetters(['pricingSection'])
+  },
+  mounted() {
+    this.$store.dispatch('updatePricingSection')
+    console.log(this.pricingSection)
   },
   data() {
     return {
