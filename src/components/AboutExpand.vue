@@ -1,7 +1,7 @@
 <template>
   <div class="row box-image-wrapper">
     <div
-      v-for="(about, index) in abouts"
+      v-for="(about, index) in aboutExpand"
       :key="index"
       class="col-md-4 box-image position-relative text-center wow move-up"
     >
@@ -21,10 +21,13 @@
 export default {
   name: 'AboutExpand',
   props: {
-    abouts: Array
+    aboutExpand: Array
   },
   data() {
     return {}
   }
 }
 </script>
+<style>
+
+</style>

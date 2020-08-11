@@ -11,8 +11,9 @@ const getters = {
   roles: state => state.user.roles,
   permission_routes: state => state.permission.routes,
   errorLogs: state => state.errorLog.logs,
+  // Getter component lading page
   logoNavbar: state => state.navbar.logoSrc,
-  heroBranding: state => state.heroBranding.heroBranding
-
+  heroBranding: state => state.heroBranding.heroBranding,
+  aboutSection: state => state.aboutSection.aboutSection
 }
 export default getters
