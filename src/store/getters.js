@@ -14,6 +14,7 @@ const getters = {
   // component
   logoNavbar: state => state.navbar.logoSrc,
   heroBranding: state => state.heroBranding.heroBranding,
-  searchBox: state => state.searchBox.searchBox
+  searchBox: state => state.searchBox.searchBox,
+  newsletter: state => state.newsletter.newsletter
 }
 export default getters
