@@ -19,7 +19,7 @@ const actions = {
   requirementSection({ commit }) {
     return getRequirementSection().then(response => {
       commit('UPDATE_REQUIREMENT_SECTION', response.data.data)
-      console.log(response.data.data)
+      // console.log(response.data.data)
     })
   }
 }
