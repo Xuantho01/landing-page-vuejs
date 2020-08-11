@@ -4,13 +4,13 @@
       <div class="feature-slider__container">
         <div class="feature-slider__wrapper">
           <swiper :options="swiperOption">
-            <swiper-slide v-for="(item, index) of featureCarouselList" :key="index">
+            <swiper-slide v-for="(item, index) of featureCarouselSection.featureCarouselList" :key="index">
               <div class="feature-slider__single-slide">
                 <div class="feature-slider__single-slide-wrapper">
                   <div class="row align-items-center">
                     <div class="col-md-6 wow move-up">
                       <div class="image">
-                        <img v-bind:src="item.imgSrc" class="img-fluid" alt="">
+                        <img :src="item.image_url" class="img-fluid" alt="">
                       </div>
                     </div>
                     <div class="col-md-6 wow move-up">
@@ -23,67 +23,7 @@
                 </div>
               </div>
             </swiper-slide>
-
-            <!--                        <swiper-slide>-->
-            <!--                            <div class="feature-slider__single-slide">-->
-            <!--                                <div class="feature-slider__single-slide-wrapper">-->
-            <!--                                    <div class="row align-items-center">-->
-            <!--                                        <div class="col-md-6 wow move-up">-->
-            <!--                                            <div class="image">-->
-            <img src="../assets/img/features/aeroland-branding-image-10.png" class="img-fluid" alt="">
-            <!--                                            </div>-->
-            <!--                                        </div>-->
-            <!--                                        <div class="col-md-6 wow move-up">-->
-            <!--                                            <div class="content">-->
-            <!--                                                <h4 class="title">Visionary Creative Team Member</h4>-->
-            <!--                                                <div class="text">We bring on like-minded and talented members to help you grow a stronger business for fiercely reaching towards higher goals every day. We try to form an all-star team that deeply investigates your company culture to advertise about it.</div>-->
-            <!--                                            </div>-->
-            <!--                                        </div>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                            </div>-->
-            <!--                        </swiper-slide>-->
-
-            <!--                         <swiper-slide>-->
-            <!--                             <div class="feature-slider__single-slide">-->
-            <!--                                <div class="feature-slider__single-slide-wrapper">-->
-            <!--                                    <div class="row align-items-center">-->
-            <!--                                        <div class="col-md-6 wow move-up">-->
-            <!--                                            <div class="image">-->
-            <!--                                                <img src="../assets/img/features/aeroland-branding-image-11.png" class="img-fluid" alt="">-->
-            <!--                                            </div>-->
-            <!--                                        </div>-->
-            <!--                                        <div class="col-md-6 wow move-up">-->
-            <!--                                            <div class="content">-->
-            <!--                                                <h4 class="title">How to Fit into The Big Picture</h4>-->
-            <!--                                                <div class="text">Our branding professionals have unique ways to avoid the well-worn path. They can get on a new original one for finding resolutions by imagining your company as a piece and study how to make it fit into the big picture.</div>-->
-            <!--                                            </div>-->
-            <!--                                        </div>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                            </div>-->
-            <!--                         </swiper-slide>-->
-
-            <!--                         <swiper-slide>-->
-            <!--                             <div class="feature-slider__single-slide">-->
-            <!--                                <div class="feature-slider__single-slide-wrapper">-->
-            <!--                                    <div class="row align-items-center">-->
-            <!--                                        <div class="col-md-6 wow move-up">-->
-            <!--                                            <div class="image">-->
-            <!--                                                <img src="../assets/img/features/aeroland-branding-image-12.png" class="img-fluid" alt="">-->
-            <!--                                            </div>-->
-            <!--                                        </div>-->
-            <!--                                        <div class="col-md-6 wow move-up">-->
-            <!--                                            <div class="content">-->
-            <!--                                                <h4 class="title">Build Enticing & Professional Website</h4>-->
-            <!--                                                <div class="text">Putting together all of your business's data, rearrange and present in an appealing way to highlight your core values, services, and visions in the local area. Your online website would be a stepping stone for expanding company's visibility.</div>-->
-            <!--                                            </div>-->
-            <!--                                        </div>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                            </div>-->
-            <!--                         </swiper-slide>  -->
-            <div class="swiper-pagination swiper-pagination--vertical swiper-pagination-1" slot="pagination"></div>
+            <div slot="pagination" class="swiper-pagination swiper-pagination--vertical swiper-pagination-1" />
           </swiper>
         </div>
       </div>
@@ -92,20 +32,16 @@
 </template>
 
 <script>
-
+import { mapGetters } from 'vuex'
 
 export default {
-  name: 'featureTwo',
+  name: 'FeatureTwo',
   components: {},
+  computed: {
+    ...mapGetters(['featureCarouselSection'])
+  },
   data() {
     return {
-      swiperSlide: [{
-        srcIcon: '',
-        title: '',
-        desciption: ''
-      }
-
-      ],
       swiperOption: {
         speed: 600,
         loop: true,
@@ -119,23 +55,11 @@ export default {
             clickable: false
           }
         }
-      },
-      featureCarouselList: [
-        {
-          imgSrc: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg',
-          title: 'Visionary Creative Team Member',
-          description: 'We bring on like-minded and talented members to help you grow a stronger business for fiercely reaching towards higher goals every day. We try to form an all-star team that deeply investigates your company culture to advertise about it.'
-        }, {
-          imgSrc: '../assets/img/features/aeroland-branding-image-12.png',
-          title: 'How to Fit into The Big Picture',
-          description: 'Our branding professionals have unique ways to avoid the well-worn path. They can get on a new original one for finding resolutions by imagining your company as a piece and study how to make it fit into the big picture.'
-        }, {
-          imgSrc: '../assets/img/features/aeroland-branding-image-10.png',
-          title: 'Visionary Creative Team Member',
-          description: 'We bring on like-minded and talented members to help you grow a stronger business for fiercely reaching towards higher goals every day. We try to form an all-star team that deeply investigates your company culture to advertise about it.'
-        }
-      ]
+      }
     }
+  },
+  mounted() {
+    this.$store.dispatch('featureCarouselSection/getFeatureCarouselSection')
   }
 }
 </script>

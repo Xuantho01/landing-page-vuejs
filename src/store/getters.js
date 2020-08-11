@@ -11,9 +11,13 @@ const getters = {
   roles: state => state.user.roles,
   permission_routes: state => state.permission.routes,
   errorLogs: state => state.errorLog.logs,
-  // component
+  // Getter component lading page
   logoNavbar: state => state.navbar.logoSrc,
   heroBranding: state => state.heroBranding.heroBranding,
+  aboutSection: state => state.aboutSection.aboutSection,
+  businessSection: state => state.businessSection.businessSection,
+  requirementSection: state => state.requirementSection.requirementSection,
+  featureCarouselSection: state => state.featureCarouselSection.featureCarouselSection,
   searchBox: state => state.searchBox.searchBox,
   newsletter: state => state.newsletter.newsletter,
   footer: state => state.footer.footer
