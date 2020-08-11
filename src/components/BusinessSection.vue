@@ -63,7 +63,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('businessSection/getBusinessSection')
+    this.$store.dispatch('businessSection/businessSection')
   }
 }
 </script>

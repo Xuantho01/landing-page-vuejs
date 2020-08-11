@@ -10,7 +10,7 @@
                   <div class="row align-items-center">
                     <div class="col-md-6 wow move-up">
                       <div class="image">
-                        <img v-bind:src="item.imgSrc" class="img-fluid" alt="">
+                        <img :src="item.imgSrc" class="img-fluid" alt="">
                       </div>
                     </div>
                     <div class="col-md-6 wow move-up">
@@ -83,7 +83,7 @@
             <!--                                </div>-->
             <!--                            </div>-->
             <!--                         </swiper-slide>  -->
-            <div class="swiper-pagination swiper-pagination--vertical swiper-pagination-1" slot="pagination"></div>
+            <div slot="pagination" class="swiper-pagination swiper-pagination--vertical swiper-pagination-1" />
           </swiper>
         </div>
       </div>
@@ -93,9 +93,8 @@
 
 <script>
 
-
 export default {
-  name: 'featureTwo',
+  name: 'FeatureTwo',
   components: {},
   data() {
     return {

@@ -15,6 +15,7 @@ const getters = {
   logoNavbar: state => state.navbar.logoSrc,
   heroBranding: state => state.heroBranding.heroBranding,
   aboutSection: state => state.aboutSection.aboutSection,
-  businessSection: state => state.businessSection.businessSection
+  businessSection: state => state.businessSection.businessSection,
+  requirementSection: state => state.requirementSection.requirementSection
 }
 export default getters

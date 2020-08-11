@@ -5,12 +5,12 @@
         <div class="requirements-list">
           <h2
             class="requirements-list__title mb-15 wow move-up"
-          >{{ title }}</h2>
+          >{{ requirementSection.title }}</h2>
           <p
             class="requirements-list__text heading mb-30 wow move-up"
-          >{{ description }}</p>
+          >{{ requirementSection.description }}</p>
           <ul class="check-list green-check-list section-space--mb_50 wow move-up">
-            <li v-for="item in list" :key="item" class="list-item">{{ item }}</li>
+            <li v-for="item in requirementSection.requirementList" :key="item" class="list-item">{{ item }}</li>
           </ul>
           <!-- <ul class="check-list green-check-list section-space--mb_50 wow move-up">
                         <li class="list-item">Customer First Content-focused Displaying Effects </li>
@@ -25,7 +25,7 @@
       <div class="col-lg-6 order-1 order-xl-2">
         <div class="requirements-list-image wow move-up" style="margin-left: auto !important; margin-top: auto">
           <img
-            :src="srcImage"
+            :src="requirementSection.image_url"
             class="img-fluid"
             alt
           >
@@ -37,19 +37,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'RequireList',
+  computed: {
+    ...mapGetters(['requirementSection'])
+  },
   data() {
     return {
-      title: 'Meeting all of your requirements for SEO',
-      description: 'AeroLand creates a prominent advantage for your business with strong features.',
-      srcImage: 'https://aphoto.vn/wp-content/uploads/2018/02/anh-dep-chup-dien-thoai.jpg',
-      list: [
-        'Customer First Content-focused Displaying Effects',
-        'High Definition Full-screen Sliders & Backgrounds',
-        'Fast Loading, Reader Friendly Navigation Style'
-      ]
     }
+  },
+  mounted() {
+    this.$store.dispatch('requirementSection/requirementSection')
   }
 }
 </script>

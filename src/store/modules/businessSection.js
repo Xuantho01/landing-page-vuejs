@@ -23,10 +23,10 @@ const mutations = {
 }
 
 const actions = {
-  getBusinessSection({ commit }) {
+  businessSection({ commit }) {
     getBusinessSection().then(response => {
       commit('UPDATE_BUSINESS_SECTION', response.data.data)
-      console.log(response.data.data)
+      // console.log(response.data.data)
     })
   }
 }
