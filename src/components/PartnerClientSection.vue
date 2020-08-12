@@ -30,7 +30,6 @@ export default {
       sectionText: 'It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media.'
     }
   }
-
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="row pricing-table-one">
-    <div class="col-md-6 col-xl-3 pricing-table wow move-up" v-for="(pricing, index) in pricingTable" :key="index">
+    <div class="col-md-6 col-xl-3 pricing-table wow move-up" v-for="(pricing, index) in pricingTableList" :key="index">
       <div class="pricing-table__inner">
         <div class="pricing-table__feature-mark" v-if="pricing.isPopular">
           <span>{{ popularTitle }}</span>
@@ -33,6 +33,9 @@
 export default {
   name: 'pricing',
   props: {
+    pricingTableList: {
+      type: Array
+    },
     popularTitle: String
   },
   data() {

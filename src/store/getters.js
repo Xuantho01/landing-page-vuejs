@@ -14,6 +14,6 @@ const getters = {
   logoNavbar: state => state.navbar.logoSrc,
   heroBranding: state => state.heroBranding.heroBranding,
   progressCircle: state => state.progressCircle.featureProgressList,
-  pricingSection: state => state.princingSection.pricingSectionObj
+  pricingSection: state => state.pricingSection.pricingSectionObj
 }
 export default getters
